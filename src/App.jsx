@@ -2,8 +2,11 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { useEffect, useRef, useState } from 'react'
 import { MeshDistortMaterial, useTexture } from '@react-three/drei'
 import { easing } from 'maath'
+import { inject } from '@vercel/analytics'
 
 import GithubLogo from './assets/github-mark.svg'
+
+inject()
 
 function Image({ url, ...props }) {
   const ref = useRef()
@@ -65,7 +68,10 @@ function App() {
       <div>
         <p className='header'>Awesome Effect</p>
         <p className='footer'>Awwwards Ready</p>
-        <a href='https://github.com/titungdup/r3f-image-effect' className='github-link'>
+        <a
+          href='https://github.com/titungdup/r3f-image-effect'
+          className='github-link'
+        >
           <img src={GithubLogo} />
         </a>
       </div>
